@@ -1,6 +1,6 @@
 {
-  "name": "Memoria Viva",
-  "short_name": "Memoria Viva",
+  "name": "My Study Room",
+  "short_name": "Study Room",
   "description": "Estudia con repaso espaciado, mapas mentales, quizzes, exámenes y un plan diario.",
   "lang": "es",
   "start_url": "./index.html",

@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Memoria Viva</title>
+<title>My Study Room</title>
 <meta name="theme-color" content="#846044">
 <meta name="description" content="App de estudio con repaso espaciado, mapas mentales, quizzes, exámenes y sesiones con pausas basadas en neurociencia.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23846044'/%3E%3Ccircle cx='10' cy='11' r='4' fill='%23DFCCB1'/%3E%3Ccircle cx='22' cy='9' r='3' fill='%23C4A071'/%3E%3Ccircle cx='21' cy='22' r='4.5' fill='%2398A086'/%3E%3Ccircle cx='9' cy='22' r='2.5' fill='%23A76D5E'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23846044'/%3E%3Cpath d='M15.5 5.5a10.5 10.5 0 1 0 11 14.3A8.7 8.7 0 0 1 15.5 5.5z' fill='%23DFCCB1'/%3E%3Cpath d='M23 5l1.05 2.7 2.9.2-2.25 1.85.75 2.8-2.45-1.55-2.45 1.55.75-2.8-2.25-1.85 2.9-.2z' fill='%23C4A071'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Study Room">
+<meta name="application-name" content="My Study Room">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;600&family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@500;700&display=swap">
@@ -70,9 +72,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* shell */
 .shell{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100%}
 .rail{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;padding:22px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:18px;background:var(--surface)}
-.brand{display:flex;align-items:center;gap:10px;padding:0 8px}
-.mark{width:30px;height:30px;flex:none}
-.brand b{font-family:var(--f-display);font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
+.brand{display:flex;align-items:center;gap:8px;padding:0 4px}
+.mark{width:32px;height:32px;flex:none}
+.brand b{font-family:var(--f-display);font-weight:700;font-size:1.18rem;letter-spacing:-.01em;white-space:nowrap}
 .nav{display:flex;flex-direction:column;gap:2px}
 .nav button{all:unset;cursor:pointer;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:700}
 .nav button:hover{background:var(--surface-2);color:var(--ink)}
@@ -300,7 +302,7 @@ textarea{resize:vertical;min-height:140px;line-height:1.55}
 <body>
 <div class="shell">
   <aside class="rail">
-    <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M9 10 L23 8 M9 10 L21 23 M23 8 L21 23 M8 23 L21 23" stroke="var(--accent)" stroke-width="1.4" fill="none" opacity=".5"/><circle cx="9" cy="10" r="4" fill="#98A086"/><circle cx="23" cy="8" r="3" fill="#C4A071"/><circle cx="21" cy="23" r="4.5" fill="#846044"/><circle cx="8" cy="23" r="2.5" fill="#A76D5E"/></svg><b>Memoria Viva</b></div>
+    <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M15.5 4.5a11.5 11.5 0 1 0 12 15.6A9.5 9.5 0 0 1 15.5 4.5z" fill="#C4A071"/><path d="M23.5 4.2l1.15 2.95 3.15.2-2.45 2 .8 3.05-2.65-1.7-2.65 1.7.8-3.05-2.45-2 3.15-.2z" fill="#A76D5E"/><circle cx="27.6" cy="15.2" r="1.1" fill="#98A086"/></svg><b>My Study Room</b></div>
     <nav class="nav" id="nav"></nav>
     <div class="rail-foot">
       <button class="timer-mini" id="timerMini" data-act="go" data-view="sesion"><i></i><span id="timerMiniT">25:00</span><span class="muted small" id="timerMiniL">Foco</span></button>
@@ -310,7 +312,7 @@ textarea{resize:vertical;min-height:140px;line-height:1.55}
   <main>
     <div class="wrap">
       <div class="mobile-top between row">
-        <div class="row"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px"><path d="M9 10 L23 8 M9 10 L21 23 M23 8 L21 23 M8 23 L21 23" stroke="var(--accent)" stroke-width="1.4" fill="none" opacity=".5"/><circle cx="9" cy="10" r="4" fill="#98A086"/><circle cx="23" cy="8" r="3" fill="#C4A071"/><circle cx="21" cy="23" r="4.5" fill="#846044"/><circle cx="8" cy="23" r="2.5" fill="#A76D5E"/></svg><b>Memoria Viva</b></div>
+        <div class="row"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px"><path d="M15.5 4.5a11.5 11.5 0 1 0 12 15.6A9.5 9.5 0 0 1 15.5 4.5z" fill="#C4A071"/><path d="M23.5 4.2l1.15 2.95 3.15.2-2.45 2 .8 3.05-2.65-1.7-2.65 1.7.8-3.05-2.45-2 3.15-.2z" fill="#A76D5E"/><circle cx="27.6" cy="15.2" r="1.1" fill="#98A086"/></svg><b>My Study Room</b></div>
         <button class="chip" data-act="settings" id="profileChipTop"></button>
       </div>
       <div id="view"></div>
@@ -320,7 +322,7 @@ textarea{resize:vertical;min-height:140px;line-height:1.55}
 <nav class="tabs" id="tabs"></nav>
 <div id="modalRoot"></div>
 <div class="toast" id="toast" hidden></div>
-<input type="file" id="importFile" accept="application/json,.json" hidden>
+<input type="file" id="importFile" accept="application/json,.json" multiple hidden>
 
 <script>
 "use strict";
@@ -448,16 +450,24 @@ const Store={
     if(raw!==null){try{this.map=JSON.parse(raw)||{}}catch{this.map={}}this.mode="navegador"}
     else if(lsSet("mv_probe","1"))this.mode="navegador";
   },
-  async finish(){this.ready=true;const p=this.pending;this.pending=[];for(const [op,k,v] of p){op==="s"?this.save(k,v):this.del(k)}},
+  async finish(){this.ready=true;const p=this.pending;this.pending=[];for(const [op,k,v] of p){op==="s"?this.putRaw(k,v):this.del(k)}},
   save(key,obj){
-    const clean=JSON.parse(JSON.stringify(obj));
+    const clean=JSON.parse(JSON.stringify(obj));clean._t=Date.now();
     if(!this.ready){this.pending.push(["s",key,clean]);return}
+    this.putRaw(key,clean);
+  },
+  putRaw(key,clean){
     this.map[key]=clean;
     if(this.mode==="dispositivo")IDB.put(key,clean).catch(e=>toast(e&&e.name==="QuotaExceededError"?"El almacenamiento está lleno. Borra apuntes antiguos para seguir guardando.":"No se pudo guardar el cambio."));
     else if(this.mode==="navegador")this.flushLocal();
   },
   del(key){
     if(!this.ready){this.pending.push(["d",key]);return}
+    const tomb=Object.assign({},this.map.tomb||{});tomb[key]=Date.now();
+    const lim=Date.now()-200*DAY;for(const k in tomb)if(tomb[k]<lim)delete tomb[k];
+    this.delRaw(key);this.putRaw("tomb",tomb);
+  },
+  delRaw(key){
     delete this.map[key];
     if(this.mode==="dispositivo")IDB.del(key).catch(()=>{});
     else if(this.mode==="navegador")this.flushLocal();
@@ -561,7 +571,7 @@ function applyKbd(el){
   const old=el.value,pos=el.selectionStart;const nv=mode==="greek"?toGreek(old):toLatinMacron(old);
   if(nv!==old){el.value=nv;const np=Math.max(0,pos-(old.length-nv.length));try{el.setSelectionRange(np,np)}catch{}}
 }
-function kbdBar(){return `<div class="kbd small"><span class="muted">Teclado:</span><div class="seg">${[["auto","Automático"],["none","Normal"],["greek","Griego"],["latin","Latín (ā)"]].map(([k,l])=>`<button type="button" data-act="kbd" data-k="${k}" aria-pressed="${ui.kbd===k}">${l}</button>`).join("")}</div>${ui.kbd==="greek"||ui.kbd==="auto"?`<span class="muted" title="a→α b→β g→γ d→δ e→ε z→ζ h→η q→θ i→ι k→κ l→λ m→μ n→ν c→ξ o→ο p→π r→ρ s→σ t→τ u→υ f→φ x→χ y→ψ w→ω">Griego: escribe <span class="mono">lo/gos</span> → λόγος · <span class="mono">)</span> suave <span class="mono">(</span> áspero <span class="mono">/</span> agudo <span class="mono">\\</span> grave <span class="mono">=</span> circunflejo <span class="mono">|</span> iota suscrita</span>`:""}${ui.kbd==="latin"?`<span class="muted">Latín: <span class="mono">a_</span> → ā, <span class="mono">a^</span> → ă</span>`:""}</div>`}
+function kbdBar(){return `<div class="kbd small"><span class="muted">Teclado:</span><div class="seg">${[["auto","Automático"],["none","Normal"],["greek","Griego"],["latin","Latín (ā)"]].map(([k,l])=>`<button type="button" data-act="kbd" data-k="${k}" aria-pressed="${ui.kbd===k}">${l}</button>`).join("")}</div>${ui.kbd==="greek"?`<span class="muted" title="a→α b→β g→γ d→δ e→ε z→ζ h→η q→θ i→ι k→κ l→λ m→μ n→ν c→ξ o→ο p→π r→ρ s→σ t→τ u→υ f→φ x→χ y→ψ w→ω">Griego: escribe <span class="mono">lo/gos</span> → λόγος · <span class="mono">)</span> suave <span class="mono">(</span> áspero <span class="mono">/</span> agudo <span class="mono">\\</span> grave <span class="mono">=</span> circunflejo <span class="mono">|</span> iota suscrita</span>`:""}${ui.kbd==="latin"?`<span class="muted">Latín: <span class="mono">a_</span> → ā, <span class="mono">a^</span> → ă</span>`:""}${ui.kbd==="auto"?`<span class="muted">Automático: griego solo donde la respuesta va en griego. Elige «Griego» para escribirlo en cualquier campo.</span>`:""}</div>`}
 function parseVocab(text){
   const out=[];
   for(let line of String(text||"").split(/\r?\n/)){
@@ -658,6 +668,7 @@ function errMsg(e){
     case "empty":return "La IA devolvió una respuesta vacía. Vuelve a intentarlo.";
     case "server":return "El servicio de IA ha dado un error. Inténtalo más tarde o hazlo sin IA.";
     case "nomine":return "Escribe primero tu traducción: compararla es lo que te hace aprender.";
+    case "vocab":return "Este apunte es una lista de vocabulario: sácale partido en Tarjetas, Quiz, Examen y Audio.";
     case "short":return "El apunte tiene poco contenido para esto. Añade más texto (al menos un par de párrafos).";
     case "image":return "No se pudo abrir alguna imagen. Prueba con JPG o PNG.";
     case "ocrload":return "La primera vez que se leen fotos sin IA hace falta conexión para descargar el lector de texto.";
@@ -668,7 +679,7 @@ async function runAI(key,fn,localKind){
   if(ui.busy[key])return;
   const ctl=new AbortController();ui.busy[key]=ctl;delete ui.err[key];delete ui.errLocal[key];render();
   try{await fn(ctl.signal)}
-  catch(e){const m=errMsg(e);if(m){ui.err[key]=m;if(localKind&&hasAI()&&!["short","cancelled"].includes(e&&e.code))ui.errLocal[key]=localKind}}
+  catch(e){const m=errMsg(e);if(m){ui.err[key]=m;if(localKind&&hasAI()&&!["short","vocab","cancelled"].includes(e&&e.code))ui.errLocal[key]=localKind}}
   finally{delete ui.busy[key];render()}
 }
 const stopAI=key=>{ui.busy[key]&&ui.busy[key].abort()};
@@ -758,6 +769,7 @@ function localCards(n){
   return out;
 }
 function localSummary(n){
+  if(isVocabNote(n))throw{code:"vocab"};
   const paras=paragraphs(n.text);const terms=keyTerms(n.text,24);const tn=tnOf(terms);
   const all=[];paras.forEach((p,pi)=>splitS(p.text).forEach((x,si)=>all.push({x,pi,sc:sentScore(x,tn)+(si===0?0.45:0)})));
   if(all.length<2)throw{code:"short"};
@@ -773,6 +785,7 @@ function localSummary(n){
   return out;
 }
 function localOutline(n){
+  if(isVocabNote(n))throw{code:"vocab"};
   const paras=paragraphs(n.text);const tn=tnOf(keyTerms(n.text,24));
   if(!paras.length||splitS(n.text).length<2)throw{code:"short"};
   return paras.slice(0,14).map((p,i)=>{
@@ -784,6 +797,7 @@ function localOutline(n){
   }).join("\n");
 }
 function localMap(n){
+  if(isVocabNote(n))throw{code:"vocab"};
   const paras=paragraphs(n.text);let ramas=[];
   if(paras.length>=2){
     ramas=paras.slice(0,7).map(p=>{const title=short(p.heading||shortTitle(splitS(p.text)[0]||p.text),5);const ts=new Set(stemsOf(title));
@@ -846,7 +860,10 @@ function localTutor(n,q){
   return "Esto es lo que dicen tus apuntes:\n\n"+r.map(o=>"• "+o.x).join("\n")+"\n\nLéelo una vez, tápalo y explícalo con tus palabras. ¿Qué parte sigue sin encajarte?";
 }
 const speakable=x=>String(x).replace(/[₀-₉]/g,c=>SUB[c]).replace(/→/g," produce ").replace(/\s\+\s/g," más ").replace(/_____/g,"hueco").replace(/[*#«»]/g,"");
+function isVocabNote(n){const L=String(n.text||"").split(/\n/).filter(x=>x.trim()).length;const v=parseVocab(n.text).length;return v>=3&&v>=L*0.6}
 function localAudio(n){
+  const voc=parseVocab(n.text);
+  if(isVocabNote(n)){const L=[`Vamos a repasar el vocabulario: ${speakable(n.title)}. Di el significado en voz alta antes de oírlo.`,"[PAUSA]"];voc.slice(0,40).forEach(v=>{L.push("PREGUNTA: "+speakable(v.f));L.push(speakable(v.b)+".")});L.push("Fin del repaso. Las que hayas fallado, márcalas como Otra vez en tus tarjetas.");return L.join("\n")}
   const paras=paragraphs(n.text).slice(0,7);const tn=tnOf(keyTerms(n.text,24));const cards=localCards(n);
   const L=[`Vamos a repasar: ${speakable(n.title)}.`,"[PAUSA]"];
   paras.forEach((p,i)=>{
@@ -924,6 +941,7 @@ function vHoy(){
   <div class="topbar"><div class="stack" style="gap:4px"><span class="label">${esc(new Date().toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"}))}</span><h1>${saludo}, ${esc(p.name)}</h1></div>
   <button class="btn primary" data-act="newnote">${I.plus}Nuevo apunte</button></div>
   <div class="next"><div class="glyph">${I.spark}</div><div class="stack" style="gap:4px"><h2>${esc(nx.t)}</h2><p>${esc(nx.d)}</p></div><button class="btn" ${nx.a}>${nx.b}</button></div>
+  ${backupNotice()}
   ${planToday()}
   <div class="grid g4">
     <div class="stat hot"><span class="label">Racha</span><span class="v">${s}<small> día${s===1?"":"s"}</small></span></div>
@@ -964,7 +982,7 @@ function buildPlan(maxDays=70){
     const date=dkey(Date.now()+d*DAY);let left=capMin(date)-(d===0?doneMin:0);const tasks=[];
     const live=exams.filter(e=>e.date>date);
     for(const e of live)for(const t of e.temas){const ds=revDates(t,e);const nx=ds[t.revs.length];if(nx&&nx<=date){tasks.push({k:"rev",e:e.id,t:t.id,min:15,sub:e.subject,name:t.name,late:nx<date});t.revs.push(date);left-=15}}
-    for(const e of live){const dl=daysUntil(e.date)-d;if(!e.sim&&dl===Math.min(2,Math.max(1,daysUntil(e.date)-1))&&e.temas.every(t=>t.learnedOn)){tasks.push({k:"sim",e:e.id,min:60,sub:e.subject});e.sim=true;left-=60}}
+    for(const e of live){const dl=daysUntil(e.date)-d;if(!e.sim&&dl>=1&&dl<=2&&(e.temas.every(t=>t.learnedOn)||dl===1)&&left>=60){tasks.push({k:"sim",e:e.id,min:60,sub:e.subject});e.sim=true;left-=60}}
     const per={};
     while(left>=25){
       const cands=live.filter(e=>e.temas.some(t=>!t.learnedOn));if(!cands.length)break;
@@ -1140,13 +1158,13 @@ function tCards(n){
   <p class="small muted">Una idea por tarjeta. Las preguntas que te obligan a producir la respuesta (no solo reconocerla) fijan más. Puedes escribir las tuyas: formularlas ya es estudiar.</p>
   ${canAI()?"":aiNotice()}${ui.busy[bk]?busyBox(bk,"Creando tarjetas…"):""}${errBox(bk)}
   <form class="grid g2" data-form="addcard" data-id="${n.id}" style="align-items:end">
-    <label class="field"><span>Pregunta</span><input type="text" id="cf-${n.id}" required maxlength="400" data-kbd="${LANGS[n.lang]&&LANGS[n.lang].kbd||""}" placeholder="${n.lang==="grc"?"λόγος, -ου, ὁ":n.lang==="la"?"lupus, -i (m.)":"¿Qué enzima fija el CO₂?"}"></label>
+    <label class="field"><span>Pregunta</span><input type="text" id="cf-${n.id}" required maxlength="400" data-kbd="${n.lang==="la"?"latin":""}" placeholder="${n.lang==="grc"?"λόγος, -ου, ὁ":n.lang==="la"?"lupus, -i (m.)":"¿Qué enzima fija el CO₂?"}"></label>
     <label class="field"><span>Respuesta</span><div class="row" style="flex-wrap:nowrap"><input type="text" id="cb-${n.id}" required maxlength="600" placeholder="${n.lang?"palabra, razón":"La RuBisCO"}"><button class="btn" type="submit">Añadir</button></div></label>
   </form>
   <details class="card stack" style="padding:12px 14px" ${n.lang?"open":""}><summary style="cursor:pointer;font-weight:700">Importar lista de vocabulario</summary>
     <form class="stack" data-form="vocab" data-id="${n.id}" style="margin-top:10px">
       <p class="small muted">Una palabra por línea, separando con guion, igual o tabulador. Ejemplos: <span class="mono">lupus, -i (m.) - lobo</span> · <span class="mono">λόγος, -ου, ὁ = palabra, razón</span></p>
-      ${kbdBar()}<textarea id="vocIn-${n.id}" rows="6" data-kbd="${LANGS[n.lang]&&LANGS[n.lang].kbd||""}" placeholder="rosa, -ae (f.) - rosa&#10;amo, -as, -are, -avi, -atum - amar"></textarea>
+      ${kbdBar()}<textarea id="vocIn-${n.id}" rows="6" data-kbd="${n.lang==="la"?"latin":""}" placeholder="rosa, -ae (f.) - rosa&#10;amo, -as, -are, -avi, -atum - amar"></textarea>
       <label class="row small" style="gap:8px"><input type="checkbox" id="vocRev-${n.id}" checked> Crear también la tarjeta al revés (significado → palabra)</label>
       <div><button class="btn primary" type="submit">Añadir tarjetas</button></div>
     </form></details>
@@ -1186,7 +1204,7 @@ function tExam(n){
       ${st.end?`<div class="row between"><span class="label">En curso</span><span class="mono" id="examClock">--:--</span></div>`:""}
       <h3>Parte 1 · Test</h3>
       ${ex.test.map((q,qi)=>`<fieldset class="stack" style="border:0;padding:0;margin:0;gap:6px"><legend style="font-weight:700;margin-bottom:6px">${qi+1}. ${esc(q.p)}</legend>${q.o.map((op,i)=>`<label class="opt" style="cursor:pointer"><input type="radio" name="t${qi}" value="${i}" ${st.ansT[qi]===i?"checked":""}><span>${esc(op)}</span></label>`).join("")}</fieldset>`).join("")}
-      <h3>Parte 2 · Desarrollo</h3>
+      ${ex.abiertas.length?`<h3>Parte 2 · Desarrollo</h3>`:""}
       ${ex.abiertas.map((q,qi)=>`<label class="field"><span>${ex.test.length+qi+1}. ${esc(q.p)}</span><textarea id="ea-${qi}" name="a${qi}" rows="5">${esc(st.ansA[qi]||"")}</textarea></label>`).join("")}
       ${ui.busy[gk]?busyBox(gk,"Corrigiendo…"):""}${errBox(gk)}
       <div class="row"><button class="btn primary" type="submit" ${ui.busy[gk]||!canAI()?"disabled":""}>Entregar y corregir</button><button class="btn ghost" type="button" data-act="quitexam">Salir</button></div></form>`;
@@ -1238,8 +1256,8 @@ function ttsStep(){
   if(TTS.i>=TTS.segs.length){TTS.playing=false;TTS.i=-1;render();return}
   hiSeg();const s=TTS.segs[TTS.i];
   if(s.k==="p"){TTS.timer=setTimeout(()=>{TTS.i++;ttsStep()},1800);return}
-  const u=new SpeechSynthesisUtterance(s.k==="q"?"Pregunta. "+s.t:s.t);const m=getMeta();u.lang="es-ES";u.rate=Number(m.rate||1);
-  const v=esVoices().find(v=>v.name===m.voice)||esVoices()[0];if(v)u.voice=v;
+  const gk=hasGreek(s.t);const u=new SpeechSynthesisUtterance(s.k==="q"&&!gk?"Pregunta. "+s.t:s.t);const m=getMeta();u.lang=gk?"el-GR":"es-ES";u.rate=Number(m.rate||1);
+  const v=gk?speechSynthesis.getVoices().find(v=>/^el/i.test(v.lang)):(esVoices().find(v=>v.name===m.voice)||esVoices()[0]);if(v)u.voice=v;
   u.onend=()=>{if(!TTS.playing)return;TTS.timer=setTimeout(()=>{TTS.i++;ttsStep()},s.k==="q"?7000:250)};
   u.onerror=()=>{TTS.playing=false;render()};
   speechSynthesis.speak(u);
@@ -1268,7 +1286,7 @@ function glossary(n,src){
   const decks=myNotes().filter(x=>x.lang===n.lang).flatMap(x=>(state.decks[x.id]||{cards:[]}).cards.map(c=>({...c,note:x.title})));
   const base=c=>norm(String(c.f).split(/[,(]/)[0].trim());
   const out=[];const seen=new Set();
-  for(const w of wordsOf(src)){const nw=norm(w);if(nw.length<2||seen.has(nw))continue;seen.add(nw);
+  for(const w of wordsOf(src)){const nw=norm(w);if(nw.length<2||seen.has(nw)||STOP.has(nw))continue;seen.add(nw);
     const root=nw.slice(0,Math.max(3,Math.min(5,nw.length-1)));
     const hits=decks.filter(c=>{const b=base(c);return b&&b.length>=2&&(b===nw||(b.length>=4&&nw.startsWith(b.slice(0,Math.min(b.length-1,5))))||b.startsWith(root))}).slice(0,2);
     out.push({w,hits});
@@ -1459,7 +1477,7 @@ function advance(){
 function finishSession(completed){
   if(T.phase==="focus"&&!completed){const done=phaseLen()-(T.running?Math.max(0,T.endAt-Date.now()):T.left);if(done>60000)addFocus(done)}
   T.phase="idle";T.running=false;T.block=1;wake(false);clearInterval(T.tick);T.tick=null;
-  document.title="Memoria Viva";ui.dump={text:"",noteId:ui.dump?.noteId||null};$("#timerMini").classList.remove("on");
+  document.title="My Study Room";ui.dump={text:"",noteId:ui.dump?.noteId||null};$("#timerMini").classList.remove("on");
   if(completed)beep(880,3);go("sesion");
 }
 function ensureTick(){if(T.tick)return;T.tick=setInterval(()=>{if(T.phase==="idle")return;if(T.running&&Date.now()>=T.endAt){advance();return}paintTimer()},500)}
@@ -1471,7 +1489,7 @@ function paintTimer(){
   mini.classList.add("on");mini.classList.toggle("brk",T.phase!=="focus");$("#timerMiniT").textContent=txt;$("#timerMiniL").textContent=T.phase==="focus"?"Foco":"Pausa";
   const rt=$("#ringTime");if(rt)rt.textContent=txt;
   const arc=$("#ringArc");if(arc)arc.setAttribute("stroke-dashoffset",String(339.3*(1-left/phaseLen())));
-  document.title=(T.phase==="focus"?"● ":"◌ ")+txt+" · Memoria Viva";
+  document.title=(T.phase==="focus"?"● ":"◌ ")+txt+" · My Study Room";
 }
 let actx;
 function beep(f=660,times=1){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();for(let k=0;k<times;k++){const o=actx.createOscillator(),g=actx.createGain();o.frequency.value=f;o.connect(g);g.connect(actx.destination);const t0=actx.currentTime+k*0.28;g.gain.setValueAtTime(0.0001,t0);g.gain.exponentialRampToValueAtTime(0.25,t0+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t0+0.22);o.start(t0);o.stop(t0+0.24)}}catch{}}
@@ -1510,7 +1528,7 @@ function noteModal(n){
     <div class="drop" id="drop" tabindex="0" role="button">Arrastra aquí fotos de tus apuntes, PDF o archivos de texto, o <b style="color:var(--accent)">toca para elegir</b></div><input type="file" id="fileIn" multiple accept="image/*,application/pdf,.txt,.md,text/plain" hidden>
     <div class="thumbs" id="thumbs"></div>
     <div id="imgActions"></div>
-    <label class="field"><span>Contenido</span>${kbdBar()}<textarea id="nx" rows="12" maxlength="150000" data-kbd="${n&&LANGS[n.lang]&&LANGS[n.lang].kbd||""}" placeholder="Pega aquí tus apuntes, el texto del libro o una lista de vocabulario (una palabra por línea: lupus, -i (m.) - lobo)…">${esc(n?n.text:"")}</textarea></label>
+    <label class="field"><span>Contenido</span>${kbdBar()}<textarea id="nx" rows="12" maxlength="150000" data-kbd="${n&&n.lang==="la"?"latin":""}" placeholder="Pega aquí tus apuntes, el texto del libro o una lista de vocabulario (una palabra por línea: lupus, -i (m.) - lobo)…">${esc(n?n.text:"")}</textarea></label>
     <div class="row"><button class="btn primary" type="submit">Guardar</button><button class="btn ghost" type="button" data-act="closemodal">Cancelar</button></div>
   </form>`);
   renderThumbs();
@@ -1579,7 +1597,8 @@ function settingsModal(){
   </section>
   <section class="stack"><span class="label">Dónde se guarda</span>
     <div class="notice small">${Store.mode==="memoria"?"Este navegador no permite guardar: lo que hagas se perderá al cerrar. Prueba con Chrome, Edge, Firefox o Safari sin modo privado.":"En este dispositivo, sin cuentas y sin internet. Nada sale de aquí. Si cambias de dispositivo o borras los datos del navegador, usa las copias: descarga una aquí y restáurala en el otro."}</div>
-    <div class="row"><button class="btn sm" data-act="export">Descargar copia</button><button class="btn sm" data-act="import">Restaurar copia</button></div>
+    <p class="small muted">Última copia descargada: <b>${esc(fmtWhen(lastBackup()))}</b>. Al restaurar puedes elegir una o varias copias: se combinan y te quedas con lo más reciente de cada cosa.</p>
+    <div class="row"><button class="btn sm primary" data-act="export">Descargar copia</button><button class="btn sm" data-act="import">Restaurar copias</button>${Object.keys(Store.map).some(k=>k.startsWith("bk_"))?`<button class="btn sm ghost" data-act="undorestore">Deshacer la última restauración</button>`:""}</div>
     ${m.hideExample?`<div><button class="btn sm ghost" data-act="showex">Mostrar de nuevo el apunte de ejemplo</button></div>`:`<div><button class="btn sm ghost" data-act="hideex">Ocultar el apunte de ejemplo</button></div>`}
   </section>`);
 }
@@ -1644,7 +1663,7 @@ document.addEventListener("click",async e=>{
     case "stopai":stopAI(d.key);break;
     case "recall":ui.recall=d.v==="1";ui.revealed=new Set();render();break;
     case "reveal":ui.revealed.add(Number(d.i));render();break;
-    case "delcard":{const dk=deckOf(d.id);dk.cards=dk.cards.filter(c=>c.id!==d.c);saveDeck(d.id);render();break}
+    case "delcard":{const dk=deckOf(d.id);dk.cards=dk.cards.filter(c=>c.id!==d.c);dk.del=[...(dk.del||[]),d.c].slice(-2000);saveDeck(d.id);render();break}
     case "reviewnote":startReview(d.id);break;
     case "startreview":startReview();break;
     case "flip":ui.review.shown=true;render();break;
@@ -1669,6 +1688,11 @@ document.addEventListener("click",async e=>{
     case "hideex":{getMeta().hideExample=true;saveMeta();const id="ej-"+state.pid;if(!Store.map["n_"+id]){delete state.notes[id];delete state.outs[id];delete state.decks[id]}settingsModal();render();break}
     case "showex":getMeta().hideExample=false;saveMeta();ensureExample(state.pid);settingsModal();render();break;
     case "export":doExport();break;
+    case "restoremerge":restore("merge");break;
+    case "askreplace":ui.confirmReplace=true;document.querySelector('[data-act="askreplace"]').outerHTML=`<div class="row"><span class="small">¿Seguro? Se perderá lo que no esté en la copia.</span><button class="btn sm danger" data-act="restorereplace">Sí, sustituir</button><button class="btn sm ghost" data-act="cancelreplace">Cancelar</button></div>`;break;
+    case "cancelreplace":ui.confirmReplace=false;t.closest(".row").outerHTML=`<div><button class="btn sm danger" data-act="askreplace">Sustituir todo por la copia</button></div>`;break;
+    case "restorereplace":restore("replace");break;
+    case "undorestore":undoRestore();break;
     case "import":$("#importFile").click();break;
     case "addexam":examModal();break;
     case "aitest":{const out=$("#aiTestOut");out.textContent="Probando…";try{await llm("Responde solo con la palabra: listo");out.textContent="Conexión correcta";out.style.color="var(--ok)"}catch(e2){out.textContent=errMsg(e2);out.style.color="var(--bad)"}break}
@@ -1676,7 +1700,7 @@ document.addEventListener("click",async e=>{
     case "askdelexam":ui.confirmExam=d.id;render();break;
     case "canceldelexam":ui.confirmExam=null;render();break;
     case "eknow":ui.eknow=d.v;document.querySelectorAll('[data-act="eknow"]').forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===d.v)));examEstimate();break;
-    case "delexam":{const m=getMeta();m.exams=m.exams.filter(x=>x.id!==d.id);ui.confirmExam=null;saveMeta();render();break}
+    case "delexam":{const m=getMeta();m.exams=m.exams.filter(x=>x.id!==d.id);m.examDel=[...(m.examDel||[]),d.id].slice(-200);ui.confirmExam=null;saveMeta();render();break}
     case "rmimg":{const im=editImgs.splice(Number(d.i),1)[0];if(im)URL.revokeObjectURL(im.url);renderThumbs();break}
     case "transcribe":transcribe();break;
     case "preset":T.preset=d.k;saveTimerPref();render();break;
@@ -1693,12 +1717,12 @@ document.addEventListener("click",async e=>{
 document.addEventListener("change",e=>{
   const t=e.target;
   if(t.id==="fileIn")handleFiles([...t.files]).then(()=>{t.value=""});
-  else if(t.id==="nl"){t.dataset.touched="1";const nx=$("#nx");if(nx)nx.dataset.kbd=LANGS[t.value]&&LANGS[t.value].kbd||""}
+  else if(t.id==="nl"){t.dataset.touched="1";const nx=$("#nx");if(nx)nx.dataset.kbd=t.value==="la"?"latin":""}
   else if(["xd","xn","xp","xwd","xwe"].includes(t.id))examEstimate();
   else if(t.id==="aiProv"){AIC.provider=t.value;AIC.key=$("#aiKey").value.trim();AIC.model="";settingsModal()}
   else if(t.id==="ttsRate"){getMeta().rate=Number(t.value);saveMeta()}
   else if(t.id==="ttsVoice"){getMeta().voice=t.value;saveMeta()}
-  else if(t.id==="importFile"&&t.files[0])doImport(t.files[0]).then(()=>{t.value=""});
+  else if(t.id==="importFile"&&t.files.length){ui.confirmReplace=false;doImport([...t.files]).then(()=>{t.value=""})}
   else if(t.id==="dumpNote"&&ui.dump){ui.dump.noteId=t.value||null}
   else if(t.name&&t.name.startsWith("t")&&ui.exam&&t.type==="radio"){ui.exam.ansT[Number(t.name.slice(1))]=Number(t.value)}
 });
@@ -1706,7 +1730,7 @@ document.addEventListener("input",e=>{
   const t=e.target;
   if((t.tagName==="TEXTAREA"||(t.tagName==="INPUT"&&t.type==="text"))&&!e.isComposing)applyKbd(t);
   if(["xn","xp","xwd","xwe"].includes(t.id))examEstimate();
-  if(t.id==="ns"){const g=guessLang(t.value);const sel=$("#nl");if(sel&&g&&!sel.dataset.touched){sel.value=g;const nx=$("#nx");if(nx)nx.dataset.kbd=LANGS[g].kbd||""}}
+  if(t.id==="ns"){const g=guessLang(t.value);const sel=$("#nl");if(sel&&g&&!sel.dataset.touched){sel.value=g;const nx=$("#nx");if(nx)nx.dataset.kbd=g==="la"?"latin":""}}
   if(t.id&&t.id.startsWith("ea-")&&ui.exam)ui.exam.ansA[Number(t.id.slice(3))]=t.value;
   else if(t.id==="dumpText"&&ui.dump)ui.dump.text=t.value;
   else if(t.id&&t.id.startsWith("fy-t-")){const id=t.id.slice(5);ui.fey[id]=ui.fey[id]||{};ui.fey[id].text=t.value}
@@ -1722,7 +1746,7 @@ document.addEventListener("keydown",e=>{
   if(e.target.closest("#drop")&&(e.key==="Enter"||e.key===" ")){e.preventDefault();$("#fileIn").click();return}
   if(ui.view==="repasar"&&ui.review&&!ui.review.done&&!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)&&!$("#modalRoot").innerHTML){
     if(!ui.review.shown&&(e.key===" "||e.key==="Enter")){e.preventDefault();ui.review.shown=true;render()}
-    else if(ui.review.shown&&/^[1-4]$/.test(e.key)){rate(Number(e.key))}
+    else if(ui.review.shown&&/^[1-4]$/.test(e.key)){e.preventDefault();rate(Number(e.key))}
   }
 });
 document.addEventListener("submit",async e=>{
@@ -1845,16 +1869,119 @@ function readSection(){const r=readPrefs();const seg=(k,opts)=>`<div class="seg"
   </section>`}
 
 /* copias */
+/* copias de seguridad */
+const BK_KEEP=3;
+const userKeys=map=>Object.keys(map).filter(k=>!k.startsWith("bk_"));
+const tOf=v=>v?(v._t||v.updated||v.created||0):0;
+function fmtWhen(t){if(!t)return"nunca";const d=new Date(t);return d.toLocaleDateString("es-ES",{day:"numeric",month:"short",year:"numeric"})+", "+d.toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"})}
+function lastBackup(){return Number(lsGet("mv_lastbk"))||0}
 function doExport(){
-  const data=JSON.stringify({app:"memoria-viva",v:1,at:new Date().toISOString(),map:Store.map});
-  try{const b=new Blob([data],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="memoria-viva-copia-"+today()+".json";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);toast("Copia descargada")}
+  const map={};userKeys(Store.map).forEach(k=>map[k]=Store.map[k]);
+  const now=new Date();const stamp=today()+"-"+String(now.getHours()).padStart(2,"0")+String(now.getMinutes()).padStart(2,"0");
+  const data=JSON.stringify({app:"my-study-room",v:3,at:now.toISOString(),device:navigator.userAgent.slice(0,80),map});
+  try{const b=new Blob([data],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="my-study-room-copia-"+stamp+".json";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);
+    lsSet("mv_lastbk",String(Date.now()));toast("Copia descargada");render();if($("#modalRoot").innerHTML)settingsModal()}
   catch{toast("No se pudo descargar la copia.")}
 }
-async function doImport(file){
-  try{const j=JSON.parse(await file.text());if(!j||j.app!=="memoria-viva"||!j.map)throw 0;
-    for(const [k,v] of Object.entries(j.map))Store.save(k,v);
-    Object.assign(state,{notes:{},outs:{},decks:{},metas:{}});hydrate();closeModal();go("hoy");toast("Copia restaurada");
-  }catch{toast("Ese archivo no es una copia válida de Memoria Viva.")}
+/* combinar: para cada apunte, tarjeta y examen se queda la versión más reciente */
+function mergeDeck(L,R){
+  if(!L)return R;if(!R)return L;
+  const del=new Set([...(L.del||[]),...(R.del||[])]);const by=new Map();
+  for(const c of L.cards||[])if(!del.has(c.id))by.set(c.id,c);
+  for(const c of R.cards||[]){if(del.has(c.id))continue;const o=by.get(c.id);if(!o||(c.last||0)>(o.last||0))by.set(c.id,c)}
+  return Object.assign({},tOf(R)>tOf(L)?R:L,{cards:[...by.values()],del:[...del].slice(-2000),_t:Math.max(tOf(L),tOf(R))});
+}
+function mergeMeta(L,R){
+  if(!L)return R;if(!R)return L;
+  const newer=tOf(R)>tOf(L)?R:L;const out=Object.assign({},newer);
+  out.days=[...new Set([...(L.days||[]),...(R.days||[])])].sort().slice(-400);
+  for(const f of ["reviews","focus"]){out[f]={};for(const src of [L[f]||{},R[f]||{}])for(const [k,v] of Object.entries(src))out[f][k]=Math.max(out[f][k]||0,v)}
+  out.doneLog={};for(const src of [L.doneLog||{},R.doneLog||{}])for(const [k,v] of Object.entries(src))if(!out.doneLog[k]||v.length>out.doneLog[k].length)out.doneLog[k]=v;
+  const del=new Set([...(L.examDel||[]),...(R.examDel||[])]);out.examDel=[...del].slice(-200);
+  const ex=new Map();
+  for(const e of [...(L.exams||[]),...(R.exams||[])]){
+    if(del.has(e.id))continue;const o=ex.get(e.id);
+    if(!o){ex.set(e.id,JSON.parse(JSON.stringify(e)));continue}
+    o.sim=o.sim||e.sim;
+    if(o.temas&&e.temas){const tm=new Map(o.temas.map(t=>[t.id,t]));for(const t of e.temas){const a=tm.get(t.id);if(!a){o.temas.push(t);continue}
+      a.done=Math.max(a.done||0,t.done||0);a.learnedOn=[a.learnedOn,t.learnedOn].filter(Boolean).sort()[0]||null;a.revs=[...new Set([...(a.revs||[]),...(t.revs||[])])].sort()}}
+  }
+  out.exams=[...ex.values()];out._t=Math.max(tOf(L),tOf(R));
+  return out;
+}
+function mergeProfiles(L,R){
+  if(!L)return R;if(!R)return L;
+  const by=new Map();const newerFirst=tOf(R)>tOf(L)?[R,L]:[L,R];
+  for(const src of newerFirst)for(const p of src.list||[])if(!by.has(p.id))by.set(p.id,p);
+  return {list:[...by.values()],active:L.active||R.active,_t:Math.max(tOf(L),tOf(R))};
+}
+function mergeMaps(local,inc){
+  const out={},st={nuevos:0,actualizados:0,iguales:0,borrados:0,apuntes:0};
+  const tomb=Object.assign({},local.tomb||{});for(const [k,v] of Object.entries(inc.tomb||{}))tomb[k]=Math.max(tomb[k]||0,v);
+  const keys=new Set([...userKeys(local),...userKeys(inc)]);keys.delete("tomb");
+  for(const k of keys){
+    const L=local[k],R=inc[k];const gone=tomb[k]||0;
+    if(gone&&gone>=Math.max(tOf(L),tOf(R))){if(L)st.borrados++;continue}
+    let v;
+    if(k.startsWith("d_"))v=mergeDeck(L,R);
+    else if(k.startsWith("m_"))v=mergeMeta(L,R);
+    else if(k==="profiles")v=mergeProfiles(L,R);
+    else v=!L?R:!R?L:(tOf(R)>tOf(L)?R:L);
+    out[k]=v;
+    if(!L)st.nuevos++;else if(JSON.stringify(L)!==JSON.stringify(v))st.actualizados++;else st.iguales++;
+    if(k.startsWith("n_")&&(!L||JSON.stringify(L)!==JSON.stringify(v)))st.apuntes++;
+  }
+  out.tomb=tomb;return{map:out,st};
+}
+let pendingRestore=null;
+async function readBackups(files){
+  const ok=[];let bad=0;
+  for(const f of files){try{const j=JSON.parse(await f.text());if(j&&(j.app==="my-study-room"||j.app==="memoria-viva")&&j.map)ok.push({name:f.name,at:Date.parse(j.at)||0,map:j.map});else bad++}catch{bad++}}
+  return{ok:ok.sort((a,b)=>a.at-b.at),bad};
+}
+async function doImport(files){
+  const {ok,bad}=await readBackups(files);
+  if(!ok.length){toast("Ningún archivo es una copia válida de My Study Room.");return}
+  let inc={};for(const b of ok)inc=mergeMaps(inc,b.map).map;
+  const {map,st}=mergeMaps(Store.map,inc);
+  const newest=ok[ok.length-1];
+  pendingRestore={ok,inc,map,newest};
+  modal(`<div class="row between"><h2>Restaurar copia</h2><button class="btn ghost sm" data-act="closemodal">Cerrar</button></div>
+  <div class="stack" style="gap:6px">${ok.map(b=>`<div class="row between small"><span class="mono" style="overflow-wrap:anywhere">${esc(b.name)}</span><span class="muted">${esc(fmtWhen(b.at))}</span></div>`).join("")}${bad?`<p class="small" style="color:var(--bad)">${bad} archivo${bad>1?"s no son copias válidas y se ignoran":" no es una copia válida y se ignora"}.</p>`:""}</div>
+  <div class="card stack"><h3>Combinar con lo que hay en este dispositivo</h3>
+    <p class="small">Para cada apunte, tarjeta y examen se queda <b>la versión más reciente</b>, venga de la copia o de este dispositivo. No se pierde lo que hayas hecho aquí ni en el otro dispositivo. Lo que se borró después de hacer la copia sigue borrado.</p>
+    <p class="small muted">Cambios previstos: ${st.apuntes} apunte${st.apuntes===1?"":"s"} nuevo${st.apuntes===1?"":"s"} o actualizado${st.apuntes===1?"":"s"}, ${st.nuevos+st.actualizados} elementos en total; ${st.iguales} ya estaban al día.</p>
+    <div><button class="btn primary" data-act="restoremerge">Combinar y quedarme con lo más reciente</button></div></div>
+  <div class="stack" style="gap:8px"><h3>O sustituirlo todo</h3><p class="small muted">Borra lo que hay en este dispositivo y deja exactamente la copia${ok.length>1?" más reciente":""} (${esc(fmtWhen(newest.at))}). Úsalo solo si este dispositivo tiene datos que no quieres.</p>
+    ${ui.confirmReplace?`<div class="row"><span class="small">¿Seguro? Se perderá lo que no esté en la copia.</span><button class="btn sm danger" data-act="restorereplace">Sí, sustituir</button><button class="btn sm ghost" data-act="cancelreplace">Cancelar</button></div>`:`<div><button class="btn sm danger" data-act="askreplace">Sustituir todo por la copia</button></div>`}</div>
+  <p class="small muted">Antes de cambiar nada guardo una instantánea de este dispositivo, por si quieres deshacerlo.</p>`);
+}
+function snapshot(){
+  const snap={at:Date.now(),map:{}};userKeys(Store.map).forEach(k=>snap.map[k]=Store.map[k]);
+  const ks=Object.keys(Store.map).filter(k=>k.startsWith("bk_")).sort();
+  while(ks.length>=BK_KEEP)Store.delRaw(ks.shift());
+  Store.putRaw("bk_"+snap.at,snap);
+}
+function applyMap(map){
+  for(const k of userKeys(Store.map))if(!(k in map))Store.delRaw(k);
+  for(const [k,v] of Object.entries(map))if(JSON.stringify(Store.map[k])!==JSON.stringify(v))Store.putRaw(k,v);
+  Object.assign(state,{notes:{},outs:{},decks:{},metas:{}});ui.review=null;ui.noteId=null;hydrate();
+}
+function restore(mode){
+  const P=pendingRestore;if(!P)return;
+  snapshot();
+  if(mode==="merge")applyMap(P.map);
+  else{const m=Object.assign({},P.newest.map);m.tomb=Store.map.tomb||{};applyMap(m)}
+  pendingRestore=null;ui.confirmReplace=false;closeModal();go("hoy");toast(mode==="merge"?"Copia combinada: tienes lo más reciente de cada sitio":"Copia restaurada");
+}
+function undoRestore(){
+  const ks=Object.keys(Store.map).filter(k=>k.startsWith("bk_")).sort();const k=ks[ks.length-1];if(!k)return;
+  const snap=Store.map[k];applyMap(snap.map);Store.delRaw(k);closeModal();go("hoy");toast("Restauración deshecha");
+}
+function backupNotice(){
+  const real=myNotes().filter(n=>!n.example).length;if(!real)return"";
+  const lb=lastBackup();if(lb&&Date.now()-lb<7*DAY)return"";
+  return `<div class="notice warn small row between" style="gap:12px"><span><b>${lb?"Hace más de una semana de tu última copia.":"Aún no has hecho ninguna copia."}</b> Tus apuntes solo están en este dispositivo: descarga una copia y guárdala en Drive o en tu correo.</span><button class="btn sm" data-act="export">Descargar copia</button></div>`;
 }
 
 /* ============ arranque ============ */

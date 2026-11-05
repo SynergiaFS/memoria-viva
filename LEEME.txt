@@ -1,5 +1,5 @@
-MEMORIA VIVA · app de estudio
-==============================
+MY STUDY ROOM · app de estudio
+===============================
 
 No necesita cuentas ni Claude. Todo se guarda en el propio dispositivo.
 
@@ -12,16 +12,23 @@ No necesita cuentas ni Claude. Todo se guarda en el propio dispositivo.
 2) EN EL MÓVIL, COMO UNA APP (recomendado)
    La carpeta necesita una dirección web. La forma más sencilla y gratuita:
    - Entra en https://app.netlify.com/drop
-   - Arrastra la carpeta "memoria-viva" entera.
+   - Arrastra la carpeta "my-study-room" entera.
    - Te da un enlace. Ábrelo en el móvil y elige
      "Añadir a pantalla de inicio" (Safari: botón Compartir; Chrome: menú ⋮).
    Desde ahí se abre como una app y funciona sin conexión.
    Cada hijo la instala en su móvil: sus datos son solo suyos.
 
-3) COPIAS DE SEGURIDAD Y CAMBIO DE DISPOSITIVO
-   Ajustes (botón con el nombre, arriba) > Descargar copia.
-   En el otro dispositivo: Ajustes > Restaurar copia.
-   Hazlo de vez en cuando: si se borran los datos del navegador, se pierden.
+3) COPIAS DE SEGURIDAD Y USO EN MÓVIL Y PC
+   Cada dispositivo guarda sus propios datos. Para pasarlos de uno a otro:
+   - En el dispositivo donde has estudiado: Ajustes > Descargar copia.
+   - En el otro: Ajustes > Restaurar copias > elige la copia (o varias)
+     > "Combinar y quedarme con lo más reciente".
+   Para cada apunte, tarjeta y examen se queda la versión más reciente,
+   así no se pierde lo hecho en ninguno de los dos. Lo borrado sigue borrado.
+   Antes de restaurar se guarda una instantánea: si algo no te convence,
+   Ajustes > Deshacer la última restauración.
+   La app avisa si pasa más de una semana sin copia. Guarda las copias en
+   Drive o en el correo: si se borran los datos del navegador, son tu respaldo.
 
 4) VARIOS HIJOS EN EL MISMO DISPOSITIVO
    Ajustes > ¿Quién estudia? > Nuevo perfil. Cada perfil tiene sus apuntes,
