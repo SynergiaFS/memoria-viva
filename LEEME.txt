@@ -1,0 +1,40 @@
+MEMORIA VIVA · app de estudio
+==============================
+
+No necesita cuentas ni Claude. Todo se guarda en el propio dispositivo.
+
+1) USO RÁPIDO EN EL ORDENADOR
+   Descomprime la carpeta y abre index.html con doble clic
+   (Chrome, Edge, Firefox o Safari, sin modo privado).
+   Guarda siempre la carpeta en el mismo sitio para que el navegador
+   encuentre los datos.
+
+2) EN EL MÓVIL, COMO UNA APP (recomendado)
+   La carpeta necesita una dirección web. La forma más sencilla y gratuita:
+   - Entra en https://app.netlify.com/drop
+   - Arrastra la carpeta "memoria-viva" entera.
+   - Te da un enlace. Ábrelo en el móvil y elige
+     "Añadir a pantalla de inicio" (Safari: botón Compartir; Chrome: menú ⋮).
+   Desde ahí se abre como una app y funciona sin conexión.
+   Cada hijo la instala en su móvil: sus datos son solo suyos.
+
+3) COPIAS DE SEGURIDAD Y CAMBIO DE DISPOSITIVO
+   Ajustes (botón con el nombre, arriba) > Descargar copia.
+   En el otro dispositivo: Ajustes > Restaurar copia.
+   Hazlo de vez en cuando: si se borran los datos del navegador, se pierden.
+
+4) VARIOS HIJOS EN EL MISMO DISPOSITIVO
+   Ajustes > ¿Quién estudia? > Nuevo perfil. Cada perfil tiene sus apuntes,
+   tarjetas, exámenes y plan.
+
+5) INTELIGENCIA ARTIFICIAL (OPCIONAL)
+   Todo funciona sin IA. Si quieres resultados más elaborados, corrección de
+   preguntas abiertas y traducción comentada de latín y griego, en
+   Ajustes > Inteligencia artificial pega una clave de Google Gemini
+   (tiene nivel gratuito), OpenAI o Anthropic. La clave se queda en el
+   dispositivo. Si la usan menores, pon un límite de gasto en ese servicio.
+
+6) QUÉ NECESITA INTERNET
+   - Nada para estudiar, repasar, el plan o el temporizador.
+   - La primera vez que se lee un PDF o una foto (descarga el lector).
+   - La IA, si la activas.
